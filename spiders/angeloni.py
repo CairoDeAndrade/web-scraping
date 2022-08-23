@@ -18,7 +18,7 @@ class AngelSpider(scrapy.Spider):
                 'link': link
             }
 
-        # next_page = response.xpath('//*[@id="container"]/div[4]/div[5]/div[6]/div[2]/a[2]//@href').get()
-        # if next_page is not None:
-        #     yield response.follow(next_page, callback=self.parse)
+        next_page = response.xpath('//*[@id="container"]/div[4]/div[5]/div[6]/div[2]/a[2]//@href').get()
+        if next_page is not None:
+            yield response.follow(next_page, callback=self.parse)
 
