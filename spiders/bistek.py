@@ -16,7 +16,7 @@ class BistekSpider(scrapy.Spider):
                 'link': link
             }
 
-        # next_page = response.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "next", " " ))]//@href').get() #attrib['href']
-        # if next_page is not None:
-        #     yield response.follow(next_page, callback=self.parse)
+        next_page = response.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "next", " " ))]//@href').get() #attrib['href']
+        if next_page is not None:
+            yield response.follow(next_page, callback=self.parse)
 
