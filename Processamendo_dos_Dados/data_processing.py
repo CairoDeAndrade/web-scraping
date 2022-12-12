@@ -28,4 +28,3 @@ with open('../Dados_das_Raspagens/angeloni.json') as angeloni:
 
     for i in sorted_price2:
         print(i)
-#
